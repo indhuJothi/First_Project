@@ -13,6 +13,7 @@ import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { IsString, IsOptional, IsDate, ValidateNested } from "class-validator";
 import { Type } from "class-transformer";
+import { TaskUpdateManyWithoutProjectsInput } from "./TaskUpdateManyWithoutProjectsInput";
 import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 @InputType()
 class ProjectUpdateInput {
@@ -48,6 +49,18 @@ class ProjectUpdateInput {
     nullable: true,
   })
   startDate?: Date | null;
+
+  @ApiProperty({
+    required: false,
+    type: () => TaskUpdateManyWithoutProjectsInput,
+  })
+  @ValidateNested()
+  @Type(() => TaskUpdateManyWithoutProjectsInput)
+  @IsOptional()
+  @Field(() => TaskUpdateManyWithoutProjectsInput, {
+    nullable: true,
+  })
+  tasks?: TaskUpdateManyWithoutProjectsInput;
 
   @ApiProperty({
     required: false,
