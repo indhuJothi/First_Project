@@ -17,6 +17,10 @@ import { TaskList } from "./task/TaskList";
 import { TaskCreate } from "./task/TaskCreate";
 import { TaskEdit } from "./task/TaskEdit";
 import { TaskShow } from "./task/TaskShow";
+import { LocationList } from "./location/LocationList";
+import { LocationCreate } from "./location/LocationCreate";
+import { LocationEdit } from "./location/LocationEdit";
+import { LocationShow } from "./location/LocationShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -63,6 +67,13 @@ const App = (): React.ReactElement => {
           edit={TaskEdit}
           create={TaskCreate}
           show={TaskShow}
+        />
+        <Resource
+          name="Location"
+          list={LocationList}
+          edit={LocationEdit}
+          create={LocationCreate}
+          show={LocationShow}
         />
       </Admin>
     </div>
