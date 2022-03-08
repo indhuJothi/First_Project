@@ -2,6 +2,7 @@ import { Module } from "@nestjs/common";
 import { UserModule } from "./user/user.module";
 import { ProjectModule } from "./project/project.module";
 import { TaskModule } from "./task/task.module";
+import { LocationModule } from "./location/location.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { HealthModule } from "./health/health.module";
@@ -18,6 +19,7 @@ import { GraphQLModule } from "@nestjs/graphql";
     UserModule,
     ProjectModule,
     TaskModule,
+    LocationModule,
     ACLModule,
     AuthModule,
     HealthModule,
