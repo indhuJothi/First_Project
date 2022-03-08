@@ -38,6 +38,14 @@ class Project {
 
   @ApiProperty({
     required: true,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @Field(() => Date)
+  dueDate!: Date;
+
+  @ApiProperty({
+    required: true,
     type: String,
   })
   @IsString()
