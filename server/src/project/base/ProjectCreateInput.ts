@@ -29,6 +29,14 @@ class ProjectCreateInput {
   description?: string | null;
 
   @ApiProperty({
+    required: true,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @Field(() => Date)
+  dueDate!: Date;
+
+  @ApiProperty({
     required: false,
     type: String,
   })
